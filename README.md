@@ -14,7 +14,7 @@ Swift Package Manager binary distribution for **REIOSSDK**.
 2. Select **File** → **Add Package Dependencies...**
 3. Enter the repository URL:
    ```text
-   https://github.com/ResulticksInc/REIOSSDK-SPM.git
+   https://github.com/resulticks/REIOSSDK-SPM.git
    ```
 4. Set **Dependency Rule** to:
    - `Up to Next Major`: `1.0.0`
@@ -27,7 +27,7 @@ Swift Package Manager binary distribution for **REIOSSDK**.
 ### In `Package.swift`
 ```swift
 dependencies: [
-    .package(url: "https://github.com/ResulticksInc/REIOSSDK-SPM.git", from: "1.0.0")
+    .package(url: "https://github.com/resulticks/REIOSSDK-SPM.git", from: "1.0.0")
 ],
 targets: [
     .target(
