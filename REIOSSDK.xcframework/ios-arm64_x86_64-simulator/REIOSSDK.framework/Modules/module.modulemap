@@ -1,0 +1,4 @@
+framework module REIOSSDK {
+  header "REIOSSDK-Swift.h"
+  export *
+}

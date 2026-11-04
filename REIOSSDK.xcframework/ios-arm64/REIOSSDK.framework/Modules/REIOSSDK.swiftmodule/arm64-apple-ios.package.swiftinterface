@@ -1,0 +1,1086 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2.4 (swiftlang-6.2.4.1.4 clang-1700.6.4.2)
+// swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name REIOSSDK -package-name sdk
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.4
+import CommonCrypto
+import CoreLocation
+import CoreTelephony
+import Foundation
+import Network
+import OSLog
+import ObjectiveC
+import SQLite3
+import Security
+import SocketIO
+import Swift
+import SwiftUI
+import UIKit
+import UserNotifications
+import UserNotificationsUI
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import ObjectiveC.runtime
+public struct AnyCodable : Swift.Codable, @unchecked Swift.Sendable {
+  public let value: Any
+  public init(_ value: Any)
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct SDKConfiguration : Swift.Sendable {
+  public let appId: Swift.String
+  public let debug: Swift.Bool
+  public let isPrint: Swift.Bool
+  public let sdkVersion: Swift.String
+  public let environment: REIOSSDK.SDKEnvironment
+  public let isEncryptionEnabled: Swift.Bool
+  public let enableAutoScreenTracking: Swift.Bool
+  public init(appId: Swift.String, debug: Swift.Bool = false, isPrint: Swift.Bool = false, environment: REIOSSDK.SDKEnvironment = .team, isEncryptionEnabled: Swift.Bool = false, enableAutoScreenTracking: Swift.Bool = false)
+}
+public struct DeepLinkResult : @unchecked Swift.Sendable {
+  public let screenName: Swift.String
+  public let customParams: [Swift.String : Any]
+  public let isNewInstall: Swift.Bool
+  public let isDeepLink: Swift.Bool
+  public let shareContent: Swift.String?
+}
+public enum DeepLinkSource : Swift.String, Swift.Sendable, Swift.CustomStringConvertible {
+  case browser
+  case pushNotification
+  case qrCode
+  case email
+  case sms
+  case inAppMessage
+  case externalApp
+  case unknown
+  public var description: Swift.String {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct DeepLinkData : @unchecked Swift.Sendable {
+  public let screenName: Swift.String
+  public let sectionName: Swift.String?
+  public let campaignId: Swift.String?
+  public let mobileFriendlyUrl: Swift.String?
+  public let customParams: [Swift.String : Any]
+  public let rawQueryParams: [Swift.String : Swift.String]
+  public let isNewInstall: Swift.Bool
+  public let isDeepLink: Swift.Bool
+  public let shareContent: Swift.String?
+  public let source: REIOSSDK.DeepLinkSource
+  public let originalURL: Foundation.URL
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(screenName: Swift.String, sectionName: Swift.String? = nil, campaignId: Swift.String? = nil, mobileFriendlyUrl: Swift.String? = nil, customParams: [Swift.String : Any] = [:], rawQueryParams: [Swift.String : Swift.String] = [:], isNewInstall: Swift.Bool = false, isDeepLink: Swift.Bool = false, shareContent: Swift.String? = nil, source: REIOSSDK.DeepLinkSource = .unknown, originalURL: Foundation.URL)
+  #endif
+}
+public struct DeferredDeepLinkData : @unchecked Swift.Sendable {
+  public let screenName: Swift.String
+  public let sectionName: Swift.String?
+  public let campaignId: Swift.String?
+  public let mobileFriendlyUrl: Swift.String?
+  public let utmSource: Swift.String?
+  public let utmMedium: Swift.String?
+  public let utmCampaign: Swift.String?
+  public let utmContent: Swift.String?
+  public let utmTerm: Swift.String?
+  public let customParams: [Swift.String : Any]
+  public let isFromCache: Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(screenName: Swift.String, sectionName: Swift.String? = nil, campaignId: Swift.String? = nil, mobileFriendlyUrl: Swift.String? = nil, utmSource: Swift.String? = nil, utmMedium: Swift.String? = nil, utmCampaign: Swift.String? = nil, utmContent: Swift.String? = nil, utmTerm: Swift.String? = nil, customParams: [Swift.String : Any] = [:], isFromCache: Swift.Bool = false)
+  #endif
+}
+@_hasMissingDesignatedInitializers final public class CustomEventTracker : @unchecked Swift.Sendable {
+  public static let shared: REIOSSDK.CustomEventTracker
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func getEventCount(for eventName: Swift.String, days: Swift.Int? = nil) -> Swift.Int
+  #endif
+  final public func incrementEventCount(for eventName: Swift.String)
+  @objc deinit
+}
+public struct Event : Swift.Codable, Swift.Sendable {
+  public let eventId: Swift.String
+  public let eventName: Swift.String
+  public let timestamp: Swift.String
+  public let data: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(name: Swift.String, data: Swift.String? = nil)
+  #endif
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol StorageServiceProtocol : Swift.Sendable {
+  func save(key: Swift.String, value: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  func load(key: Swift.String) -> Swift.String?
+  #endif
+}
+@_hasMissingDesignatedInitializers final public class VisualEditorManager : @unchecked Swift.Sendable {
+  public static let shared: REIOSSDK.VisualEditorManager
+  @_Concurrency.MainActor final public func start(socketUrl: Swift.String, apiKey: Swift.String)
+  @_Concurrency.MainActor final public func stop()
+  @objc deinit
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public var sdkElementType: Swift.String {
+    get
+  }
+  @_Concurrency.MainActor @preconcurrency public var sdkCurrentValue: Swift.String {
+    get
+  }
+}
+public enum FieldTracker {
+  public static let eventFieldInteraction: Swift.String
+  public static let eventFieldFocused: Swift.String
+  public static let eventFieldBlurred: Swift.String
+  public static let eventFormFieldSaved: Swift.String
+  public static let eventFormSubmitted: Swift.String
+  public static func capture(screenName: Swift.String, fieldId: Swift.String, value: Swift.String)
+  public static func captureFormField(formId: Swift.String, screenName: Swift.String, fieldId: Swift.String, fieldLabel: Swift.String, value: Swift.String)
+  public static func submitForm(formId: Swift.String, screenName: Swift.String)
+  public static func trackFocus(screenName: Swift.String, fieldId: Swift.String)
+  public static func trackBlur(screenName: Swift.String, fieldId: Swift.String, focusedAt: Foundation.Date, currentValue: Swift.String)
+}
+@_hasMissingDesignatedInitializers final public class FieldTrackingManager : @unchecked Swift.Sendable {
+  public static let shared: REIOSSDK.FieldTrackingManager
+  @_Concurrency.MainActor final public func attachToScreen(screenName: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor final public func detachFromScreen(screenName: Swift.String, screenObject: inout [Swift.String : Any]?)
+  #endif
+  final public func onFieldInteraction(screenName: Swift.String, fieldId: Swift.String, rawValue: Swift.String)
+  final public func updateConfigs(_ configs: [[Swift.String : Any]])
+  @objc deinit
+}
+public struct CarouselItemModel : Swift.Codable, Swift.Sendable, Swift.Equatable {
+  public let title: Swift.String
+  public let body: Swift.String
+  public let url: Swift.String
+  public let sourceType: Swift.Int
+  public let titleColor: Swift.String
+  public let bodyColor: Swift.String
+  public let contentBgColor: Swift.String
+  public let isTimer: Swift.Bool
+  public let timerTTL: Swift.String
+  public let timerText: Swift.String
+  public let timerBg: Swift.String
+  public let isMargin: Swift.Bool
+  public let isCornerRadius: Swift.Bool
+  public let customActions: [REIOSSDK.CustomActionModel]?
+  public let navigationScreen: Swift.String
+  public let screenUrl: Swift.String
+  public let mobileFriendlyUrl: Swift.String
+  public let customParams: Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(title: Swift.String = "", body: Swift.String = "", url: Swift.String = "", sourceType: Swift.Int = 4, titleColor: Swift.String = "", bodyColor: Swift.String = "", contentBgColor: Swift.String = "", isTimer: Swift.Bool = false, timerTTL: Swift.String = "", timerText: Swift.String = "", timerBg: Swift.String = "", isMargin: Swift.Bool = true, isCornerRadius: Swift.Bool = true, customActions: [REIOSSDK.CustomActionModel]? = nil, navigationScreen: Swift.String = "", screenUrl: Swift.String = "", mobileFriendlyUrl: Swift.String = "", customParams: Swift.String = "")
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func parseArray(from raw: Any?) -> [REIOSSDK.CarouselItemModel]
+  #endif
+  public static func == (a: REIOSSDK.CarouselItemModel, b: REIOSSDK.CarouselItemModel) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CustomActionModel : Swift.Codable, Swift.Sendable, Swift.Equatable {
+  public let actionId: Swift.Int?
+  public let actionType: Swift.String?
+  public let actionName: Swift.String?
+  public let actionTextColor: Swift.String?
+  public let actionBgColor: Swift.String?
+  public let activityName: Swift.String?
+  public let screenUrl: Swift.String?
+  public let mobileFriendlyUrl: Swift.String?
+  public let customParams: Swift.String?
+  public let duration: Swift.String?
+  public let url: Swift.String?
+  public let navigationScreen: Swift.String?
+  public let fragmentName: Swift.String?
+  public let text: Swift.String?
+  public let email: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(actionId: Swift.Int? = nil, actionType: Swift.String? = nil, actionName: Swift.String? = nil, actionTextColor: Swift.String? = nil, actionBgColor: Swift.String? = nil, activityName: Swift.String? = nil, screenUrl: Swift.String? = nil, mobileFriendlyUrl: Swift.String? = nil, customParams: Swift.String? = nil, duration: Swift.String? = nil, url: Swift.String? = nil, navigationScreen: Swift.String? = nil, fragmentName: Swift.String? = nil, text: Swift.String? = nil, email: Swift.String? = nil)
+  #endif
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public static func == (a: REIOSSDK.CustomActionModel, b: REIOSSDK.CustomActionModel) -> Swift.Bool
+}
+extension REIOSSDK.NotificationActionHandler {
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func shareContent(tag: Swift.Int, share: Swift.String? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func passSmartLinkValue(tag: Swift.Int, dict: [Swift.String : Any]? = nil)
+  #endif
+  final public func extSmartlink(data: [Swift.String : Any])
+  final public func maybeLater()
+  final public func clearnViewedNotification()
+  final public func clearViewedNotification()
+}
+@_hasMissingDesignatedInitializers final public class NotificationActionHandler : REIOSSDK.NotificationActionHandling, @unchecked Swift.Sendable {
+  final public var carouselItems: [REIOSSDK.CarouselItemModel]
+  final public var noteModel: REIOSSDK.NotificationModel
+  final public var pageIndex: Swift.Int?
+  weak final public var extensionContext: Foundation.NSExtensionContext?
+  weak final public var viewController: UIKit.UIViewController?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(noteModel: REIOSSDK.NotificationModel, carouselItems: [REIOSSDK.CarouselItemModel] = [], pageIndex: Swift.Int? = -1, extensionContext: Foundation.NSExtensionContext? = nil, viewController: UIKit.UIViewController? = nil)
+  #endif
+  final public func determineActions(actionType: Swift.String, tag: Swift.Int)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func callPhoneNumber(tag: Swift.Int, phone: Swift.String? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func openSafari(tag: Swift.Int, webUrl: Swift.String? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func getClickedItem(tag: Swift.Int) -> REIOSSDK.CustomActionModel?
+  #endif
+  final public func sendCampaign(status: Swift.Int, campaignId: Swift.String)
+  @objc deinit
+}
+public protocol NotificationActionHandling : AnyObject, Swift.Sendable {
+  func determineActions(actionType: Swift.String, tag: Swift.Int)
+  #if compiler(>=5.3) && $NonescapableTypes
+  func callPhoneNumber(tag: Swift.Int, phone: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  func openSafari(tag: Swift.Int, webUrl: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  func shareContent(tag: Swift.Int, share: Swift.String?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  func passSmartLinkValue(tag: Swift.Int, dict: [Swift.String : Any]?)
+  #endif
+  func extSmartlink(data: [Swift.String : Any])
+  func clearnViewedNotification()
+  func clearViewedNotification()
+  func maybeLater()
+  #if compiler(>=5.3) && $NonescapableTypes
+  func getClickedItem(tag: Swift.Int) -> REIOSSDK.CustomActionModel?
+  #endif
+  func sendCampaign(status: Swift.Int, campaignId: Swift.String)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor final public class NotificationContentExtensionViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor final public var model: REIOSSDK.NotificationModel?
+  @_Concurrency.MainActor final public var attachment: UserNotifications.UNNotificationAttachment?
+  @_Concurrency.MainActor final public var actionHandler: (any REIOSSDK.NotificationActionHandling)?
+  @_Concurrency.MainActor @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
+  @objc deinit
+}
+public struct NotificationModel : Swift.Codable, Swift.Sendable {
+  public let notificationId: Swift.String
+  public let campaignId: Swift.String
+  public let title: Swift.String
+  public let subtitle: Swift.String
+  public let body: Swift.String
+  public let attachmentUrl: Swift.String
+  public let screenUrl: Swift.String
+  public let customParams: Swift.String
+  public let ttl: Swift.String
+  public let pushAmplifierId: Swift.String
+  public let badge: Swift.Int
+  public let mobileFriendlyUrl: Swift.String
+  public let pushType: Swift.Int
+  public var readStatus: Swift.Bool
+  public let htmlTitle: Swift.String
+  public let htmlBody: Swift.String
+  public let isTimer: Swift.Bool
+  public let timerText: Swift.String
+  public let timerBg: Swift.String
+  public let titleColor: Swift.String
+  public let bodyColor: Swift.String
+  public let contentBgColor: Swift.String
+  public let bannerStyle: Swift.Int
+  public let sourceType: Swift.Int
+  public let isCustom: Swift.Bool
+  public let customActions: [REIOSSDK.CustomActionModel]?
+  public let isMargin: Swift.Bool
+  public let isCornerRadius: Swift.Bool
+  public let isFirst: Swift.String
+  public let isSecond: Swift.String
+  public let isContent: Swift.Bool
+  public let isCarousel: Swift.Bool
+  public let carouselItems: [REIOSSDK.CarouselItemModel]
+  public let templateType: Swift.String
+  public var carouselPosition: Swift.Int
+  public let navigationScreen: Swift.String
+  public let fragmentName: Swift.String
+  public let category: Swift.String
+  public let categoryName: Swift.String
+  public let sound: Swift.String
+  public let badgeCount: Swift.Int
+  public let timerTTL: Swift.String
+  public let textAlignment: Swift.String
+  public let overlay: Swift.String
+  public let isCloseButton: Swift.Bool
+  public let isPadding: Swift.Bool
+  public let templateDataJson: Swift.String?
+  public let statusText: Swift.String
+  public let progress: Swift.Int?
+  public let progressMax: Swift.Int?
+  public let eta: Swift.String
+  public let isMeta: Swift.Bool
+  public let metadata: [Swift.String : Swift.String]?
+  public let timestamp: Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var templateData: [Swift.String : Any]? {
+    get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(notificationId: Swift.String, campaignId: Swift.String, title: Swift.String, subtitle: Swift.String, body: Swift.String, attachmentUrl: Swift.String, screenUrl: Swift.String, customParams: Swift.String, ttl: Swift.String, pushAmplifierId: Swift.String, badge: Swift.Int, mobileFriendlyUrl: Swift.String, pushType: Swift.Int, readStatus: Swift.Bool, htmlTitle: Swift.String, htmlBody: Swift.String, isTimer: Swift.Bool, timerText: Swift.String, timerBg: Swift.String, titleColor: Swift.String, bodyColor: Swift.String, contentBgColor: Swift.String, bannerStyle: Swift.Int, sourceType: Swift.Int, isCustom: Swift.Bool, customActions: [REIOSSDK.CustomActionModel]?, isMargin: Swift.Bool, isCornerRadius: Swift.Bool, isFirst: Swift.String, isSecond: Swift.String, isContent: Swift.Bool, isCarousel: Swift.Bool, carouselItems: [REIOSSDK.CarouselItemModel], templateType: Swift.String, carouselPosition: Swift.Int, navigationScreen: Swift.String, fragmentName: Swift.String, category: Swift.String, categoryName: Swift.String, sound: Swift.String, badgeCount: Swift.Int, timerTTL: Swift.String, textAlignment: Swift.String, overlay: Swift.String, isCloseButton: Swift.Bool, isPadding: Swift.Bool, templateDataJson: Swift.String? = nil, statusText: Swift.String = "", progress: Swift.Int? = nil, progressMax: Swift.Int? = nil, eta: Swift.String = "", isMeta: Swift.Bool = false, metadata: [Swift.String : Swift.String]? = nil, timestamp: Swift.String = "")
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func from(userInfo rawUserInfo: [Swift.AnyHashable : Any], notificationId: Swift.String, timestamp: Swift.String) -> REIOSSDK.NotificationModel?
+  #endif
+  public static func extractPayload(from rawUserInfo: [Swift.AnyHashable : Any]) -> [Swift.AnyHashable : Any]
+  public static func isInAppNotification(userInfo: [Swift.AnyHashable : Any]) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class NotificationPresenter : Swift.Sendable {
+  public static func present(jsonString: Swift.String)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @_Concurrency.MainActor final public class StudioPairingManager {
+  @_Concurrency.MainActor public static let shared: REIOSSDK.StudioPairingManager
+  @discardableResult
+  @_Concurrency.MainActor final public func handlePairing(url: Foundation.URL) -> Swift.Bool
+  @_Concurrency.MainActor final public func isStudioPairingUrl(_ url: Foundation.URL) -> Swift.Bool
+  @objc deinit
+}
+public protocol DeepLinkListener : AnyObject, Swift.Sendable {
+  @_Concurrency.MainActor func onDeepLinkReceived(_ data: REIOSSDK.DeepLinkData)
+}
+public protocol DeferredDeepLinkListener : AnyObject, Swift.Sendable {
+  @_Concurrency.MainActor func onDeferredDeepLinkReceived(_ data: REIOSSDK.DeferredDeepLinkData)
+  @_Concurrency.MainActor func onDeferredDeepLinkFailed(_ error: REIOSSDK.SDKError)
+}
+@_hasMissingDesignatedInitializers final public class NotificationExtensionHandler : Swift.Sendable {
+  public static func handleServiceExtension(request: UserNotifications.UNNotificationRequest, contentHandler: @escaping @Sendable (UserNotifications.UNNotificationContent) -> Swift.Void)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func handleContentExtension(notification: UserNotifications.UNNotification) -> REIOSSDK.NotificationModel?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor public static func presentContentExtension(vc: UIKit.UIViewController, notification: UserNotifications.UNNotification, deeplinkData: [Swift.String : Any]? = nil, callback: ((Swift.Int) -> Swift.Void)? = nil)
+  #endif
+  @objc deinit
+}
+public protocol REIOSSDKProtocol : AnyObject {
+  func initSDK(appId: Swift.String, debug: Swift.Bool, enableAutoScreenTracking: Swift.Bool)
+  func registerUser(params: [Swift.String : Any]) async
+  func logout() async
+  func updateToken(token: Swift.String) async
+  func updateLocation(latitude: Swift.Double, longitude: Swift.Double) async
+  func setScreenName(name: Swift.String) async
+  #if compiler(>=5.3) && $NonescapableTypes
+  func addCustomEvent(name: Swift.String, data: Swift.String?) async
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  func addCustomEvent(name: Swift.String, data: [Swift.String : Any]?) async
+  #endif
+  func getNotification(userInfo: [Swift.AnyHashable : Any], notificationId: Swift.String, timeStamp: Swift.String) async
+  #if compiler(>=5.3) && $NonescapableTypes
+  func getNotificationResponse(userInfo: [Swift.AnyHashable : Any], actionId: Swift.String?, notificationId: Swift.String, timeStamp: Swift.String) async
+  #endif
+  @_Concurrency.MainActor func showInAppPayload(_ jsonString: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  func sendConversionTracking(data: [Swift.String : Any]?) async
+  #endif
+  func submitLeadForm(params: [Swift.String : Any]) async
+  func trackFieldEvent(view: UIKit.UIView) async
+  func capture(screenName: Swift.String, fieldId: Swift.String, value: Swift.String)
+  func captureFormField(formId: Swift.String, screenName: Swift.String, fieldId: Swift.String, fieldLabel: Swift.String, value: Swift.String)
+  func submitForm(formId: Swift.String, screenName: Swift.String)
+  func trackFocus(screenName: Swift.String, fieldId: Swift.String)
+  func trackBlur(screenName: Swift.String, fieldId: Swift.String, focusedAt: Foundation.Date, currentValue: Swift.String)
+  @_Concurrency.MainActor func attachFieldTracking(to screenName: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor func detachFieldTracking(from screenName: Swift.String, screenObject: inout [Swift.String : Any]?)
+  #endif
+  func updateFieldTrackingConfigs(_ configs: [[Swift.String : Any]])
+  func getInboxViewController() -> UIKit.UIViewController
+  func captureDropOff(pathKey: Swift.String, data: [Swift.String : Any]) async
+  func getDropOffListener(isShowPopup: Swift.Bool, onReady: @escaping @Sendable () -> Swift.Void) async
+  @_Concurrency.MainActor func showResumeJourneyPopup(onProceed: @escaping ([Swift.String : Any]) -> Swift.Void, onCancel: @escaping ([Swift.String : Any]) -> Swift.Void)
+  @_Concurrency.MainActor func startVisualEditor(socketUrl: Swift.String, apiKey: Swift.String)
+  @_Concurrency.MainActor func stopVisualEditor()
+  @discardableResult
+  @_Concurrency.MainActor func handleUniversalLink(_ userActivity: Foundation.NSUserActivity) -> Swift.Bool
+  @_Concurrency.MainActor func handleDeepLink(_ url: Foundation.URL) -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  func setDeepLinkListener(_ listener: (any REIOSSDK.DeepLinkListener)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  func setDeferredDeepLinkListener(_ listener: (any REIOSSDK.DeferredDeepLinkListener)?)
+  #endif
+  @_Concurrency.MainActor func registerDeepLinkRoute<V>(path: Swift.String, viewBuilder: @escaping () -> V) where V : SwiftUICore.View
+  @_Concurrency.MainActor func startDeepLinkSocket(url: Swift.String, apiKey: Swift.String)
+  @discardableResult
+  @_Concurrency.MainActor func handleStudioPairing(url: Foundation.URL) -> Swift.Bool
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency final public class RSInboxViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  #endif
+  @objc deinit
+}
+extension REIOSSDK.RSInboxViewController : UIKit.UITableViewDataSource, UIKit.UITableViewDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc final public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc final public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @_Concurrency.MainActor @preconcurrency @objc final public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+}
+extension REIOSSDK.RSInboxViewController : UIKit.UISearchBarDelegate {
+  @_Concurrency.MainActor @preconcurrency @objc final public func searchBar(_ searchBar: UIKit.UISearchBar, textDidChange searchText: Swift.String)
+  @_Concurrency.MainActor @preconcurrency @objc final public func searchBarCancelButtonClicked(_ searchBar: UIKit.UISearchBar)
+}
+@_hasMissingDesignatedInitializers final public class REIOSSDK : REIOSSDK.REIOSSDKProtocol, @unchecked Swift.Sendable {
+  public static let shared: REIOSSDK.REIOSSDK
+  final public func initSDK(appId: Swift.String, debug: Swift.Bool = false, enableAutoScreenTracking: Swift.Bool = false)
+  final public func registerUser(params: [Swift.String : Any]) async
+  final public func logout() async
+  final public func updateToken(token: Swift.String) async
+  final public func updateLocation(latitude: Swift.Double, longitude: Swift.Double) async
+  final public func setScreenName(name: Swift.String) async
+  final public func setScrollDepth(percentage: Swift.Int) async
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func addCustomEvent(name: Swift.String, data: Swift.String? = nil) async
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func addCustomEvent(name: Swift.String, data: [Swift.String : Any]?) async
+  #endif
+  final public func getNotification(userInfo: [Swift.AnyHashable : Any], notificationId: Swift.String, timeStamp: Swift.String) async
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func getNotificationResponse(userInfo: [Swift.AnyHashable : Any], actionId: Swift.String? = nil, notificationId: Swift.String, timeStamp: Swift.String) async
+  #endif
+  @_Concurrency.MainActor final public func showInAppPayload(_ jsonString: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func sendConversionTracking(data: [Swift.String : Any]? = nil) async
+  #endif
+  final public func submitLeadForm(params: [Swift.String : Any]) async
+  final public func trackFieldEvent(view: UIKit.UIView) async
+  final public func capture(screenName: Swift.String, fieldId: Swift.String, value: Swift.String)
+  final public func captureFormField(formId: Swift.String, screenName: Swift.String, fieldId: Swift.String, fieldLabel: Swift.String, value: Swift.String)
+  final public func submitForm(formId: Swift.String, screenName: Swift.String)
+  final public func trackFocus(screenName: Swift.String, fieldId: Swift.String)
+  final public func trackBlur(screenName: Swift.String, fieldId: Swift.String, focusedAt: Foundation.Date, currentValue: Swift.String)
+  @_Concurrency.MainActor final public func attachFieldTracking(to screenName: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor final public func detachFieldTracking(from screenName: Swift.String, screenObject: inout [Swift.String : Any]?)
+  #endif
+  final public func updateFieldTrackingConfigs(_ configs: [[Swift.String : Any]])
+  final public func getInboxViewController() -> UIKit.UIViewController
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func handleDynamicLink(url: Foundation.URL) async -> REIOSSDK.DeepLinkResult?
+  #endif
+  @discardableResult
+  @_Concurrency.MainActor final public func handleUniversalLink(_ userActivity: Foundation.NSUserActivity) -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func setDeepLinkListener(_ listener: (any REIOSSDK.DeepLinkListener)?)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func setDeferredDeepLinkListener(_ listener: (any REIOSSDK.DeferredDeepLinkListener)?)
+  #endif
+  final public func captureDropOff(pathKey: Swift.String, data: [Swift.String : Any]) async
+  final public func getDropOffListener(isShowPopup: Swift.Bool, onReady: @escaping @Sendable () -> Swift.Void) async
+  @_Concurrency.MainActor final public func showResumeJourneyPopup(onProceed: @escaping ([Swift.String : Any]) -> Swift.Void, onCancel: @escaping ([Swift.String : Any]) -> Swift.Void)
+  @_Concurrency.MainActor final public func startVisualEditor(socketUrl: Swift.String, apiKey: Swift.String)
+  @_Concurrency.MainActor final public func stopVisualEditor()
+  @_Concurrency.MainActor final public func handleDeepLink(_ url: Foundation.URL) -> Swift.Bool
+  @_Concurrency.MainActor final public func registerDeepLinkRoute<V>(path: Swift.String, viewBuilder: @escaping () -> V) where V : SwiftUICore.View
+  @_Concurrency.MainActor final public func startDeepLinkSocket(url: Swift.String, apiKey: Swift.String)
+  @objc deinit
+}
+extension REIOSSDK.REIOSSDK : REIOSSDK.MatchListener {
+  final public func onMatch(dynamicList: REIOSSDK.DynamicList, matchedGroupIds: [Swift.String])
+  @discardableResult
+  @_Concurrency.MainActor final public func handleStudioPairing(url: Foundation.URL) -> Swift.Bool
+}
+public typealias AnalyticsSDK = REIOSSDK.REIOSSDK
+public typealias AnalyticsSDKProtocol = REIOSSDK.REIOSSDKProtocol
+public var shared: REIOSSDK.REIOSSDK {
+  get
+}
+@_hasMissingDesignatedInitializers final public class BlastManager : Swift.Sendable {
+  final public func triggerMobileSDKBlast(list: REIOSSDK.DynamicList) async throws -> [Swift.String : Any]
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class BackgroundTicker : Swift.Sendable {
+  public static func startBackgroundTick()
+  public static func stopTick()
+  @objc deinit
+}
+public struct EvaluationContext : Swift.Sendable {
+  public var currentActivity: Swift.String?
+  public var currentFragment: Swift.String?
+  public var lastActivity: Swift.String?
+  public var lastFragment: Swift.String?
+  public var currentEventName: Swift.String?
+  public var currentEventParams: [Swift.String : Swift.String]?
+  public var userId: Swift.String?
+  public var userType: Swift.String?
+  public var visitorCount: Swift.Int
+  public var isSignedUp: Swift.Bool
+  public var loggedInSinceMs: Swift.Int64
+  public var userAttributes: [Swift.String : Swift.String]
+  public var appVersionName: Swift.String?
+  public var appVersionCode: Swift.String?
+  public var osVersion: Swift.String?
+  public var deviceType: Swift.String?
+  public var language: Swift.String?
+  public var notificationsEnabled: Swift.Bool
+  public var currentCity: Swift.String?
+  public var currentState: Swift.String?
+  public var currentCountry: Swift.String?
+  public var currentArea: Swift.String?
+  public var latitude: Swift.Double
+  public var longitude: Swift.Double
+  public var hasLocation: Swift.Bool
+  public var locationEnteredAtMs: Swift.Int64
+  public var appOpenedAtMs: Swift.Int64
+  public var pageStartedAtMs: Swift.Int64
+  public var appFirstInstallMs: Swift.Int64
+  public var appLastUpdateMs: Swift.Int64
+  public var nowMs: Swift.Int64
+  public var screenViewsThisSession: Swift.Int
+  public var lastAppOpenMs: Swift.Int64
+  public var appBackgroundedAtMs: Swift.Int64
+  public var idleStartMs: Swift.Int64
+  public var appOpenCount: Swift.Int
+  public var isFirstSession: Swift.Bool
+  public var sessionCount: Swift.Int
+  public var didAppCrash: Swift.Bool
+  public var scrollDepthPercent: Swift.Int
+  public var isFormSubmitted: Swift.Bool
+  public var isLastActivityDone: Swift.Bool
+  public var utmSource: Swift.String?
+  public var utmMedium: Swift.String?
+  public var utmCampaign: Swift.String?
+  public var utmTerm: Swift.String?
+  public var utmContent: Swift.String?
+  public var queryParams: Swift.String?
+  public var deepLinkSource: Swift.String?
+  public var installReferrer: Swift.String?
+  public var beaconState: Swift.String?
+  public var beaconId: Swift.String?
+  public var geofenceState: Swift.String?
+  public var geofenceId: Swift.String?
+  public var appInForeground: Swift.Bool
+  public var isLoggedIn: Swift.Bool {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(currentActivity: Swift.String? = nil, currentFragment: Swift.String? = nil, lastActivity: Swift.String? = nil, lastFragment: Swift.String? = nil, currentEventName: Swift.String? = nil, currentEventParams: [Swift.String : Swift.String]? = nil, userId: Swift.String? = nil, userType: Swift.String? = nil, visitorCount: Swift.Int = 0, userAttributes: [Swift.String : Swift.String] = [:], appVersionName: Swift.String? = nil, appVersionCode: Swift.String? = nil, osVersion: Swift.String? = nil, deviceType: Swift.String? = nil, language: Swift.String? = nil, notificationsEnabled: Swift.Bool = false, currentCity: Swift.String? = nil, currentState: Swift.String? = nil, currentCountry: Swift.String? = nil, currentArea: Swift.String? = nil, latitude: Swift.Double = 0.0, longitude: Swift.Double = 0.0, hasLocation: Swift.Bool = false, locationEnteredAtMs: Swift.Int64 = 0, appOpenedAtMs: Swift.Int64 = 0, pageStartedAtMs: Swift.Int64 = 0, appFirstInstallMs: Swift.Int64 = 0, appLastUpdateMs: Swift.Int64 = 0, nowMs: Swift.Int64? = nil, screenViewsThisSession: Swift.Int = 0, appInForeground: Swift.Bool = true, isSignedUp: Swift.Bool = false, loggedInSinceMs: Swift.Int64 = 0, lastAppOpenMs: Swift.Int64 = 0, appBackgroundedAtMs: Swift.Int64 = 0, idleStartMs: Swift.Int64 = 0, appOpenCount: Swift.Int = 0, isFirstSession: Swift.Bool = false, sessionCount: Swift.Int = 0, didAppCrash: Swift.Bool = false, scrollDepthPercent: Swift.Int = 0, isFormSubmitted: Swift.Bool = false, isLastActivityDone: Swift.Bool = false, utmSource: Swift.String? = nil, utmMedium: Swift.String? = nil, utmCampaign: Swift.String? = nil, utmTerm: Swift.String? = nil, utmContent: Swift.String? = nil, queryParams: Swift.String? = nil, deepLinkSource: Swift.String? = nil, installReferrer: Swift.String? = nil, beaconState: Swift.String? = nil, beaconId: Swift.String? = nil, geofenceState: Swift.String? = nil, geofenceId: Swift.String? = nil)
+  #endif
+}
+public enum RuleLevel : Swift.String, Swift.Sendable, Swift.Hashable {
+  case entryLevel
+  case sessionLevel
+  case customEventLevel
+  case userTypeLevel
+  case locationLevel
+  case exitLevel
+  case appInBackgroundLevel
+  case smartLinkLevel
+  case geofenceLevel
+  case unknown
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct RuleLevelClassifier : Swift.Sendable {
+  public static func classify(ruleName: REIOSSDK.RuleName) -> REIOSSDK.RuleLevel
+}
+final public class SdkContextProvider : REIOSSDK.ContextProvider {
+  public init()
+  final public func currentContext() -> REIOSSDK.EvaluationContext
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class SessionTicker : Swift.Sendable {
+  public static func startScreenTick()
+  public static func stopTick()
+  @objc deinit
+}
+public struct AdvancedFilter : Swift.Decodable, Swift.Sendable {
+  public let data: [REIOSSDK.DataFilter]?
+  public let frequency: Swift.Int?
+  public let recencyDays: Swift.Int?
+  public let startDate: Swift.String?
+  public let endDate: Swift.String?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(data: [REIOSSDK.DataFilter]? = nil, frequency: Swift.Int? = nil, recencyDays: Swift.Int? = nil, startDate: Swift.String? = nil, endDate: Swift.String? = nil)
+  #endif
+  public init(from decoder: any Swift.Decoder) throws
+  public var hasData: Swift.Bool {
+    get
+  }
+  public var hasFrequency: Swift.Bool {
+    get
+  }
+  public var hasRecency: Swift.Bool {
+    get
+  }
+}
+public struct DataFilter : Swift.Decodable, Swift.Sendable {
+  public let attributeName: Swift.String
+  public let value: Swift.String
+  public let `operator`: REIOSSDK.CompareOperator
+  public init(attributeName: Swift.String, value: Swift.String, operator: REIOSSDK.CompareOperator)
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct DynamicList : Swift.Decodable, Swift.Sendable {
+  public let dynamicListId: Swift.String
+  public let dynamicListName: Swift.String
+  public let campaignId: Swift.String
+  public let ruleCondition: REIOSSDK.RuleCondition
+  public let frequencyEnabled: Swift.Bool
+  public let ruleGroups: [REIOSSDK.RuleGroup]
+  public init(dynamicListId: Swift.String, dynamicListName: Swift.String, campaignId: Swift.String, ruleCondition: REIOSSDK.RuleCondition, frequencyEnabled: Swift.Bool, ruleGroups: [REIOSSDK.RuleGroup])
+  public init(from decoder: any Swift.Decoder) throws
+  public var blastKey: Swift.String {
+    get
+  }
+  public var isRenderable: Swift.Bool {
+    get
+  }
+}
+public enum RuleCondition : Swift.String, Swift.Decodable, Swift.Sendable {
+  case and
+  case or
+  case unknown
+  public init(from decoder: any Swift.Decoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum MatchType : Swift.String, Swift.Decodable, Swift.Sendable {
+  case all
+  case any
+  case unknown
+  public init(from decoder: any Swift.Decoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum TriggerSource : Swift.Int, Swift.Decodable, Swift.Sendable {
+  case web
+  case mobile
+  case targetList
+  case forms
+  case audience
+  case location
+  case unknown
+  public init(from decoder: any Swift.Decoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum CompareOperator : Swift.String, Swift.Decodable, Swift.Sendable {
+  case `in`
+  case notIn
+  case eq
+  case neq
+  case gt
+  case lt
+  case gte
+  case lte
+  case between
+  case plus
+  case minus
+  case unknown
+  public init(from decoder: any Swift.Decoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum RuleName : Swift.String, Swift.Decodable, Swift.Sendable {
+  case newVisitor
+  case returningVisitor
+  case userType
+  case login
+  case appInstall
+  case appInstalledDate
+  case appUpdated
+  case appUpdatedDate
+  case appVersionCode
+  case appVersionName
+  case appOpened
+  case appOpenedDate
+  case appClosed
+  case appClosedDate
+  case appInBackground
+  case deviceType
+  case language
+  case operatingSystem
+  case osVersion
+  case notificationDisabled
+  case lastVisitedScreen
+  case specificScreen
+  case screenViews
+  case timeSpentOnScreen
+  case sessionDuration
+  case customEvents
+  case customEventsDate
+  case location
+  case latLngRadius
+  case cityOrArea
+  case signUp
+  case loggedInDays
+  case appOpenCount
+  case firstSession
+  case timeSinceLastOpen
+  case sessionCount
+  case sessionAbandonment
+  case idleTime
+  case userAttribute
+  case scrollDepth
+  case customEventCount
+  case customEventValue
+  case country
+  case state
+  case timeInLocation
+  case deepLinkSource
+  case installReferrer
+  case beaconEnter
+  case beaconNear
+  case beaconImmediate
+  case beaconExit
+  case geofenceEnter
+  case geofenceExit
+  case timeInBackground
+  case appCrashed
+  case appUninstall
+  case appUninstalledDate
+  case lastActivity
+  case forms
+  case beacon
+  case geofence
+  case utmSource
+  case utmMedium
+  case utmCampaign
+  case utmTerm
+  case utmContent
+  case queryParams
+  case unknown
+  public init(from decoder: any Swift.Decoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct EvaluationResult : Swift.Sendable {
+  public let matched: Swift.Bool
+  public let source: REIOSSDK.DynamicList
+  public let matchedGroups: [Swift.String]
+  public let reason: Swift.String
+  public static func match(source: REIOSSDK.DynamicList, matchedGroups: [Swift.String], reason: Swift.String) -> REIOSSDK.EvaluationResult
+  public static func miss(source: REIOSSDK.DynamicList, reason: Swift.String) -> REIOSSDK.EvaluationResult
+}
+public struct Rule : Swift.Decodable, Swift.Sendable {
+  public let name: REIOSSDK.RuleName
+  public let rawName: Swift.String
+  public let value: Swift.String
+  public let `operator`: REIOSSDK.CompareOperator
+  public let isMandatory: Swift.Bool
+  public let advanced: REIOSSDK.AdvancedFilter?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(name: REIOSSDK.RuleName, rawName: Swift.String, value: Swift.String, operator: REIOSSDK.CompareOperator, isMandatory: Swift.Bool = false, advanced: REIOSSDK.AdvancedFilter? = nil)
+  #endif
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RuleGroup : Swift.Decodable, Swift.Sendable {
+  public let id: Swift.String
+  public let matchType: REIOSSDK.MatchType
+  public let anyCount: Swift.Int
+  public let triggerSource: REIOSSDK.TriggerSource
+  public let rules: [REIOSSDK.Rule]
+  public init(id: Swift.String, matchType: REIOSSDK.MatchType, anyCount: Swift.Int = 1, triggerSource: REIOSSDK.TriggerSource, rules: [REIOSSDK.Rule])
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class RuleEngine : @unchecked Swift.Sendable {
+  public static let shared: REIOSSDK.RuleEngine
+  public enum State {
+    case notInitialized
+    case loading
+    case ready
+    case failed
+    public static func == (a: REIOSSDK.RuleEngine.State, b: REIOSSDK.RuleEngine.State) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  final public func getState() -> REIOSSDK.RuleEngine.State
+  final public func isReady() -> Swift.Bool
+  final public func setState(_ newState: REIOSSDK.RuleEngine.State)
+  final public func markReady()
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func markFailed(_ reason: Swift.String?)
+  #endif
+  final public func initialize()
+  final public func resetForTesting()
+  #if compiler(>=5.3) && $NonescapableTypes
+  @discardableResult
+  final public func loadRules(envelopeJson: Swift.String?) -> Swift.Int
+  #endif
+  final public func getLoadedCampaigns() -> [REIOSSDK.DynamicList]
+  final public func processRuleEvent(event: REIOSSDK.RuleEvent)
+  final public func evaluateSync(event: REIOSSDK.RuleEvent) -> [REIOSSDK.EvaluationResult]
+  @objc deinit
+}
+public protocol MatchListener : Swift.Sendable {
+  func onMatch(dynamicList: REIOSSDK.DynamicList, matchedGroupIds: [Swift.String])
+}
+public protocol ContextProvider : Swift.Sendable {
+  func currentContext() -> REIOSSDK.EvaluationContext
+}
+@_hasMissingDesignatedInitializers final public class RuleEngineConfig : @unchecked Swift.Sendable {
+  public static let shared: REIOSSDK.RuleEngineConfig
+  final public var isEnabled: Swift.Bool {
+    get
+    set
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public var listener: (any REIOSSDK.MatchListener)? {
+    get
+    set
+  }
+  #endif
+  final public var contextProvider: any REIOSSDK.ContextProvider {
+    get
+    set
+  }
+  @objc deinit
+}
+public enum RuleEventKind : Swift.Sendable {
+  case appOpened
+  case appInBackground
+  case appClosed
+  case sessionTick
+  case userTypeChanged
+  case locationChanged
+  case screenView
+  case custom
+  public static func == (a: REIOSSDK.RuleEventKind, b: REIOSSDK.RuleEventKind) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct RuleEvent : Swift.Sendable {
+  public let kind: REIOSSDK.RuleEventKind
+  public let name: Swift.String?
+  public let params: [Swift.String : Swift.String]?
+  public let latitude: Swift.Double
+  public let longitude: Swift.Double
+  public let hasLocation: Swift.Bool
+  public func toRuleLevel() -> REIOSSDK.RuleLevel
+  public static func appOpened() -> REIOSSDK.RuleEvent
+  public static func appInBackground(isTick: Swift.Bool = false) -> REIOSSDK.RuleEvent
+  public static func appClosed() -> REIOSSDK.RuleEvent
+  public static func sessionTick() -> REIOSSDK.RuleEvent
+  public static func userTypeChanged() -> REIOSSDK.RuleEvent
+  public static func locationChanged(lat: Swift.Double, lng: Swift.Double) -> REIOSSDK.RuleEvent
+  public static func screenView(name: Swift.String) -> REIOSSDK.RuleEvent
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func custom(name: Swift.String, params: [Swift.String : Swift.String]? = nil) -> REIOSSDK.RuleEvent
+  #endif
+}
+@_hasMissingDesignatedInitializers final public class RuleDataManager : Swift.Sendable {
+  public static let shared: REIOSSDK.RuleDataManager
+  final public func initialize()
+  final public func processApiResponse(dynamicList: [[Swift.String : Any]])
+  final public func onApiFailed()
+  @objc deinit
+}
+public enum SDKEnvironment : Swift.String, Swift.Sendable {
+  case team
+  case run
+  case tataRun
+  case smartCode
+  case smartDxGcp
+  case smartDxGcpUat
+  case smartDxAws
+  case smartDxTeam
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum UserParamKey {
+  public static let email: Swift.String
+  public static let phone: Swift.String
+  public static let uniqueId: Swift.String
+  public static let userUniqueId: Swift.String
+  public static let deviceToken: Swift.String
+  public static let token: Swift.String
+  public static let name: Swift.String
+  public static let age: Swift.String
+  public static let gender: Swift.String
+  public static let dob: Swift.String
+  public static let profileUrl: Swift.String
+  public static let education: Swift.String
+  public static let employed: Swift.String
+  public static let married: Swift.String
+  public static let adId: Swift.String
+  public static let advertiserId: Swift.String
+  public static let dynamicLink: Swift.String
+  public static let universalLink: Swift.String
+}
+public enum SystemEventName {
+  public static let appNewInstall: Swift.String
+  public static let appOpen: Swift.String
+  public static let appClose: Swift.String
+  public static let notificationOpen: Swift.String
+  public static let notificationReceived: Swift.String
+  public static let notificationDismissed: Swift.String
+  public static let notificationMaybeLater: Swift.String
+  public static let notificationExpired: Swift.String
+  public static let notificationCustomAction: Swift.String
+  public static let notificationUnsubscribed: Swift.String
+  public static let notificationResumeJourney: Swift.String
+}
+public enum NotificationActionType : Swift.String, Swift.Sendable {
+  case call
+  case weburl
+  case url
+  case share
+  case smartlink
+  case deeplink
+  case dismiss
+  case maybeLater
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SDKError : Swift.Error, Swift.Equatable {
+  case invalidConfiguration
+  case networkFailure
+  case invalidResponse
+  case unauthorized
+  case encodingError
+  case decodingError
+  case notInitialized
+  case noInternet
+  case storageError
+  case notificationExpired
+  case invalidInput(Swift.String)
+  case unknown
+  public var userFacingMessage: Swift.String {
+    get
+  }
+  public static func == (a: REIOSSDK.SDKError, b: REIOSSDK.SDKError) -> Swift.Bool
+}
+public enum SDKLogger {
+  public enum Level {
+    case verbose, debug, info, warning, error
+    public static func == (a: REIOSSDK.SDKLogger.Level, b: REIOSSDK.SDKLogger.Level) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func v(_ message: Swift.String, value: Any? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func d(_ message: Swift.String, value: Any? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func i(_ message: Swift.String, value: Any? = nil)
+  #endif
+  public static func debug(_ message: Swift.String)
+  public static func info(_ message: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func w(_ message: Swift.String, value: Any? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func e(_ message: Swift.String, value: Any? = nil)
+  #endif
+  public static func warning(_ message: Swift.String)
+  public static func error(_ message: Swift.String)
+  public static func logNetworkRequest(_ request: Foundation.URLRequest, path: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func logNetworkResponse(_ response: Foundation.HTTPURLResponse, data: Foundation.Data, unwrappedData: Foundation.Data?, path: Swift.String)
+  #endif
+}
+extension REIOSSDK.DeepLinkSource : Swift.Equatable {}
+extension REIOSSDK.DeepLinkSource : Swift.Hashable {}
+extension REIOSSDK.DeepLinkSource : Swift.RawRepresentable {}
+extension REIOSSDK.StudioPairingManager : Swift.Sendable {}
+extension REIOSSDK.RuleLevel : Swift.RawRepresentable {}
+extension REIOSSDK.RuleCondition : Swift.Equatable {}
+extension REIOSSDK.RuleCondition : Swift.Hashable {}
+extension REIOSSDK.RuleCondition : Swift.RawRepresentable {}
+extension REIOSSDK.MatchType : Swift.Equatable {}
+extension REIOSSDK.MatchType : Swift.Hashable {}
+extension REIOSSDK.MatchType : Swift.RawRepresentable {}
+extension REIOSSDK.TriggerSource : Swift.Equatable {}
+extension REIOSSDK.TriggerSource : Swift.Hashable {}
+extension REIOSSDK.TriggerSource : Swift.RawRepresentable {}
+extension REIOSSDK.CompareOperator : Swift.Equatable {}
+extension REIOSSDK.CompareOperator : Swift.Hashable {}
+extension REIOSSDK.CompareOperator : Swift.RawRepresentable {}
+extension REIOSSDK.RuleName : Swift.Equatable {}
+extension REIOSSDK.RuleName : Swift.Hashable {}
+extension REIOSSDK.RuleName : Swift.RawRepresentable {}
+extension REIOSSDK.RuleEngine.State : Swift.Equatable {}
+extension REIOSSDK.RuleEngine.State : Swift.Hashable {}
+extension REIOSSDK.RuleEventKind : Swift.Equatable {}
+extension REIOSSDK.RuleEventKind : Swift.Hashable {}
+extension REIOSSDK.SDKEnvironment : Swift.Equatable {}
+extension REIOSSDK.SDKEnvironment : Swift.Hashable {}
+extension REIOSSDK.SDKEnvironment : Swift.RawRepresentable {}
+extension REIOSSDK.NotificationActionType : Swift.Equatable {}
+extension REIOSSDK.NotificationActionType : Swift.Hashable {}
+extension REIOSSDK.NotificationActionType : Swift.RawRepresentable {}
+extension REIOSSDK.SDKLogger.Level : Swift.Equatable {}
+extension REIOSSDK.SDKLogger.Level : Swift.Hashable {}
