@@ -16069,8 +16069,8 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "REIOSSDK",
-        "printedName": "REIOSSDK",
+        "name": "REiosHandler",
+        "printedName": "REiosHandler",
         "children": [
           {
             "kind": "Var",
@@ -16079,14 +16079,14 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "REIOSSDK",
-                "printedName": "REIOSSDK.REIOSSDK",
-                "usr": "s:8REIOSSDKAAC"
+                "name": "REiosHandler",
+                "printedName": "REIOSSDK.REiosHandler",
+                "usr": "s:8REIOSSDK12REiosHandlerC"
               }
             ],
             "declKind": "Var",
-            "usr": "s:8REIOSSDKAAC6sharedABvpZ",
-            "mangledName": "$s8REIOSSDKAAC6sharedABvpZ",
+            "usr": "s:8REIOSSDK12REiosHandlerC6sharedACvpZ",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC6sharedACvpZ",
             "moduleName": "REIOSSDK",
             "static": true,
             "declAttributes": [
@@ -16106,14 +16106,14 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "REIOSSDK",
-                    "printedName": "REIOSSDK.REIOSSDK",
-                    "usr": "s:8REIOSSDKAAC"
+                    "name": "REiosHandler",
+                    "printedName": "REIOSSDK.REiosHandler",
+                    "usr": "s:8REIOSSDK12REiosHandlerC"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:8REIOSSDKAAC6sharedABvgZ",
-                "mangledName": "$s8REIOSSDKAAC6sharedABvgZ",
+                "usr": "s:8REIOSSDK12REiosHandlerC6sharedACvgZ",
+                "mangledName": "$s8REIOSSDK12REiosHandlerC6sharedACvgZ",
                 "moduleName": "REIOSSDK",
                 "static": true,
                 "implicit": true,
@@ -16156,8 +16156,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC7initSDK5appId5debug24enableAutoScreenTrackingySS_S2btF",
-            "mangledName": "$s8REIOSSDKAAC7initSDK5appId5debug24enableAutoScreenTrackingySS_S2btF",
+            "usr": "s:8REIOSSDK12REiosHandlerC7initSDK5appId5debug24enableAutoScreenTrackingySS_S2btF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC7initSDK5appId5debug24enableAutoScreenTrackingySS_S2btF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16197,8 +16197,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC12registerUser6paramsySDySSypG_tYaF",
-            "mangledName": "$s8REIOSSDKAAC12registerUser6paramsySDySSypG_tYaF",
+            "usr": "s:8REIOSSDK12REiosHandlerC12registerUser6paramsySDySSypG_tYaF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC12registerUser6paramsySDySSypG_tYaF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16219,8 +16219,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC6logoutyyYaF",
-            "mangledName": "$s8REIOSSDKAAC6logoutyyYaF",
+            "usr": "s:8REIOSSDK12REiosHandlerC6logoutyyYaF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC6logoutyyYaF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16247,8 +16247,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC11updateToken5tokenySS_tYaF",
-            "mangledName": "$s8REIOSSDKAAC11updateToken5tokenySS_tYaF",
+            "usr": "s:8REIOSSDK12REiosHandlerC11updateToken5tokenySS_tYaF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC11updateToken5tokenySS_tYaF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16281,8 +16281,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC14updateLocation8latitude9longitudeySd_SdtYaF",
-            "mangledName": "$s8REIOSSDKAAC14updateLocation8latitude9longitudeySd_SdtYaF",
+            "usr": "s:8REIOSSDK12REiosHandlerC14updateLocation8latitude9longitudeySd_SdtYaF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC14updateLocation8latitude9longitudeySd_SdtYaF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16309,8 +16309,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC13setScreenName4nameySS_tYaF",
-            "mangledName": "$s8REIOSSDKAAC13setScreenName4nameySS_tYaF",
+            "usr": "s:8REIOSSDK12REiosHandlerC13setScreenName4nameySS_tYaF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC13setScreenName4nameySS_tYaF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16337,8 +16337,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC14setScrollDepth10percentageySi_tYaF",
-            "mangledName": "$s8REIOSSDKAAC14setScrollDepth10percentageySi_tYaF",
+            "usr": "s:8REIOSSDK12REiosHandlerC14setScrollDepth10percentageySi_tYaF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC14setScrollDepth10percentageySi_tYaF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16380,8 +16380,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC14addCustomEvent4name4dataySS_SSSgtYaF",
-            "mangledName": "$s8REIOSSDKAAC14addCustomEvent4name4dataySS_SSSgtYaF",
+            "usr": "s:8REIOSSDK12REiosHandlerC14addCustomEvent4name4dataySS_SSSgtYaF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC14addCustomEvent4name4dataySS_SSSgtYaF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16435,8 +16435,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC14addCustomEvent4name4dataySS_SDySSypGSgtYaF",
-            "mangledName": "$s8REIOSSDKAAC14addCustomEvent4name4dataySS_SDySSypGSgtYaF",
+            "usr": "s:8REIOSSDK12REiosHandlerC14addCustomEvent4name4dataySS_SDySSypGSgtYaF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC14addCustomEvent4name4dataySS_SDySSypGSgtYaF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16488,8 +16488,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC15getNotification8userInfo14notificationId9timeStampySDys11AnyHashableVypG_S2StYaF",
-            "mangledName": "$s8REIOSSDKAAC15getNotification8userInfo14notificationId9timeStampySDys11AnyHashableVypG_S2StYaF",
+            "usr": "s:8REIOSSDK12REiosHandlerC15getNotification8userInfo14notificationId9timeStampySDys11AnyHashableVypG_S2StYaF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC15getNotification8userInfo14notificationId9timeStampySDys11AnyHashableVypG_S2StYaF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16556,8 +16556,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC23getNotificationResponse8userInfo8actionId012notificationH09timeStampySDys11AnyHashableVypG_SSSgS2StYaF",
-            "mangledName": "$s8REIOSSDKAAC23getNotificationResponse8userInfo8actionId012notificationH09timeStampySDys11AnyHashableVypG_SSSgS2StYaF",
+            "usr": "s:8REIOSSDK12REiosHandlerC23getNotificationResponse8userInfo8actionId012notificationJ09timeStampySDys11AnyHashableVypG_SSSgS2StYaF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC23getNotificationResponse8userInfo8actionId012notificationJ09timeStampySDys11AnyHashableVypG_SSSgS2StYaF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16584,8 +16584,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC16showInAppPayloadyySSF",
-            "mangledName": "$s8REIOSSDKAAC16showInAppPayloadyySSF",
+            "usr": "s:8REIOSSDK12REiosHandlerC16showInAppPayloadyySSF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC16showInAppPayloadyySSF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16635,8 +16635,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC22sendConversionTracking4dataySDySSypGSg_tYaF",
-            "mangledName": "$s8REIOSSDKAAC22sendConversionTracking4dataySDySSypGSg_tYaF",
+            "usr": "s:8REIOSSDK12REiosHandlerC22sendConversionTracking4dataySDySSypGSg_tYaF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC22sendConversionTracking4dataySDySSypGSg_tYaF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16676,8 +16676,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC14submitLeadForm6paramsySDySSypG_tYaF",
-            "mangledName": "$s8REIOSSDKAAC14submitLeadForm6paramsySDySSypG_tYaF",
+            "usr": "s:8REIOSSDK12REiosHandlerC14submitLeadForm6paramsySDySSypG_tYaF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC14submitLeadForm6paramsySDySSypG_tYaF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16704,8 +16704,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC15trackFieldEvent4viewySo6UIViewC_tYaF",
-            "mangledName": "$s8REIOSSDKAAC15trackFieldEvent4viewySo6UIViewC_tYaF",
+            "usr": "s:8REIOSSDK12REiosHandlerC15trackFieldEvent4viewySo6UIViewC_tYaF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC15trackFieldEvent4viewySo6UIViewC_tYaF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16744,8 +16744,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC7capture10screenName7fieldId5valueySS_S2StF",
-            "mangledName": "$s8REIOSSDKAAC7capture10screenName7fieldId5valueySS_S2StF",
+            "usr": "s:8REIOSSDK12REiosHandlerC7capture10screenName7fieldId5valueySS_S2StF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC7capture10screenName7fieldId5valueySS_S2StF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16796,8 +16796,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC16captureFormField6formId10screenName05fieldF00I5Label5valueySS_S4StF",
-            "mangledName": "$s8REIOSSDKAAC16captureFormField6formId10screenName05fieldF00I5Label5valueySS_S4StF",
+            "usr": "s:8REIOSSDK12REiosHandlerC16captureFormField6formId10screenName05fieldH00K5Label5valueySS_S4StF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC16captureFormField6formId10screenName05fieldH00K5Label5valueySS_S4StF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16830,8 +16830,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC10submitForm6formId10screenNameySS_SStF",
-            "mangledName": "$s8REIOSSDKAAC10submitForm6formId10screenNameySS_SStF",
+            "usr": "s:8REIOSSDK12REiosHandlerC10submitForm6formId10screenNameySS_SStF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC10submitForm6formId10screenNameySS_SStF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16864,8 +16864,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC10trackFocus10screenName7fieldIdySS_SStF",
-            "mangledName": "$s8REIOSSDKAAC10trackFocus10screenName7fieldIdySS_SStF",
+            "usr": "s:8REIOSSDK12REiosHandlerC10trackFocus10screenName7fieldIdySS_SStF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC10trackFocus10screenName7fieldIdySS_SStF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16910,8 +16910,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC9trackBlur10screenName7fieldId9focusedAt12currentValueySS_SS10Foundation4DateVSStF",
-            "mangledName": "$s8REIOSSDKAAC9trackBlur10screenName7fieldId9focusedAt12currentValueySS_SS10Foundation4DateVSStF",
+            "usr": "s:8REIOSSDK12REiosHandlerC9trackBlur10screenName7fieldId9focusedAt12currentValueySS_SS10Foundation4DateVSStF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC9trackBlur10screenName7fieldId9focusedAt12currentValueySS_SS10Foundation4DateVSStF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16938,8 +16938,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC19attachFieldTracking2toySS_tF",
-            "mangledName": "$s8REIOSSDKAAC19attachFieldTracking2toySS_tF",
+            "usr": "s:8REIOSSDK12REiosHandlerC19attachFieldTracking2toySS_tF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC19attachFieldTracking2toySS_tF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -16995,8 +16995,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC19detachFieldTracking4from12screenObjectySS_SDySSypGSgztF",
-            "mangledName": "$s8REIOSSDKAAC19detachFieldTracking4from12screenObjectySS_SDySSypGSgztF",
+            "usr": "s:8REIOSSDK12REiosHandlerC19detachFieldTracking4from12screenObjectySS_SDySSypGSgztF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC19detachFieldTracking4from12screenObjectySS_SDySSypGSgztF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -17045,8 +17045,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC26updateFieldTrackingConfigsyySaySDySSypGGF",
-            "mangledName": "$s8REIOSSDKAAC26updateFieldTrackingConfigsyySaySDySSypGGF",
+            "usr": "s:8REIOSSDK12REiosHandlerC26updateFieldTrackingConfigsyySaySDySSypGGF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC26updateFieldTrackingConfigsyySaySDySSypGGF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -17068,8 +17068,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC22getInboxViewControllerSo06UIViewE0CyF",
-            "mangledName": "$s8REIOSSDKAAC22getInboxViewControllerSo06UIViewE0CyF",
+            "usr": "s:8REIOSSDK12REiosHandlerC22getInboxViewControllerSo06UIViewG0CyF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC22getInboxViewControllerSo06UIViewG0CyF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -17105,8 +17105,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC17handleDynamicLink3urlAA04DeepD6ResultVSg10Foundation3URLV_tYaF",
-            "mangledName": "$s8REIOSSDKAAC17handleDynamicLink3urlAA04DeepD6ResultVSg10Foundation3URLV_tYaF",
+            "usr": "s:8REIOSSDK12REiosHandlerC17handleDynamicLink3urlAA04DeepF6ResultVSg10Foundation3URLV_tYaF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC17handleDynamicLink3urlAA04DeepF6ResultVSg10Foundation3URLV_tYaF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -17134,8 +17134,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC19handleUniversalLinkySbSo14NSUserActivityCF",
-            "mangledName": "$s8REIOSSDKAAC19handleUniversalLinkySbSo14NSUserActivityCF",
+            "usr": "s:8REIOSSDK12REiosHandlerC19handleUniversalLinkySbSo14NSUserActivityCF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC19handleUniversalLinkySbSo14NSUserActivityCF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -17172,8 +17172,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC19setDeepLinkListeneryyAA0cdE0_pSgF",
-            "mangledName": "$s8REIOSSDKAAC19setDeepLinkListeneryyAA0cdE0_pSgF",
+            "usr": "s:8REIOSSDK12REiosHandlerC19setDeepLinkListeneryyAA0efG0_pSgF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC19setDeepLinkListeneryyAA0efG0_pSgF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -17208,8 +17208,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC27setDeferredDeepLinkListeneryyAA0cdeF0_pSgF",
-            "mangledName": "$s8REIOSSDKAAC27setDeferredDeepLinkListeneryyAA0cdeF0_pSgF",
+            "usr": "s:8REIOSSDK12REiosHandlerC27setDeferredDeepLinkListeneryyAA0efgH0_pSgF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC27setDeferredDeepLinkListeneryyAA0efgH0_pSgF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -17255,8 +17255,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC14captureDropOff7pathKey4dataySS_SDySSypGtYaF",
-            "mangledName": "$s8REIOSSDKAAC14captureDropOff7pathKey4dataySS_SDySSypGtYaF",
+            "usr": "s:8REIOSSDK12REiosHandlerC14captureDropOff7pathKey4dataySS_SDySSypGtYaF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC14captureDropOff7pathKey4dataySS_SDySSypGtYaF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -17300,8 +17300,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC18getDropOffListener11isShowPopup7onReadyySb_yyYbctYaF",
-            "mangledName": "$s8REIOSSDKAAC18getDropOffListener11isShowPopup7onReadyySb_yyYbctYaF",
+            "usr": "s:8REIOSSDK12REiosHandlerC18getDropOffListener11isShowPopup7onReadyySb_yyYbctYaF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC18getDropOffListener11isShowPopup7onReadyySb_yyYbctYaF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -17383,8 +17383,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC22showResumeJourneyPopup9onProceed0F6CancelyySDySSypGc_yAFctF",
-            "mangledName": "$s8REIOSSDKAAC22showResumeJourneyPopup9onProceed0F6CancelyySDySSypGc_yAFctF",
+            "usr": "s:8REIOSSDK12REiosHandlerC22showResumeJourneyPopup9onProceed0H6CancelyySDySSypGc_yAGctF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC22showResumeJourneyPopup9onProceed0H6CancelyySDySSypGc_yAGctF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -17417,8 +17417,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC17startVisualEditor9socketUrl6apiKeyySS_SStF",
-            "mangledName": "$s8REIOSSDKAAC17startVisualEditor9socketUrl6apiKeyySS_SStF",
+            "usr": "s:8REIOSSDK12REiosHandlerC17startVisualEditor9socketUrl6apiKeyySS_SStF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC17startVisualEditor9socketUrl6apiKeyySS_SStF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -17440,8 +17440,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC16stopVisualEditoryyF",
-            "mangledName": "$s8REIOSSDKAAC16stopVisualEditoryyF",
+            "usr": "s:8REIOSSDK12REiosHandlerC16stopVisualEditoryyF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC16stopVisualEditoryyF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -17469,8 +17469,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC14handleDeepLinkySb10Foundation3URLVF",
-            "mangledName": "$s8REIOSSDKAAC14handleDeepLinkySb10Foundation3URLVF",
+            "usr": "s:8REIOSSDK12REiosHandlerC14handleDeepLinkySb10Foundation3URLVF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC14handleDeepLinkySb10Foundation3URLVF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -17515,8 +17515,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC21registerDeepLinkRoute4path11viewBuilderySS_xyct7SwiftUI4ViewRzlF",
-            "mangledName": "$s8REIOSSDKAAC21registerDeepLinkRoute4path11viewBuilderySS_xyct7SwiftUI4ViewRzlF",
+            "usr": "s:8REIOSSDK12REiosHandlerC21registerDeepLinkRoute4path11viewBuilderySS_xyct7SwiftUI4ViewRzlF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC21registerDeepLinkRoute4path11viewBuilderySS_xyct7SwiftUI4ViewRzlF",
             "moduleName": "REIOSSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : SwiftUI.View>",
             "sugared_genericSig": "<V where V : SwiftUI.View>",
@@ -17552,8 +17552,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC19startDeepLinkSocket3url6apiKeyySS_SStF",
-            "mangledName": "$s8REIOSSDKAAC19startDeepLinkSocket3url6apiKeyySS_SStF",
+            "usr": "s:8REIOSSDK12REiosHandlerC19startDeepLinkSocket3url6apiKeyySS_SStF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC19startDeepLinkSocket3url6apiKeyySS_SStF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -17594,8 +17594,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC7onMatch11dynamicList15matchedGroupIdsyAA07DynamicE0V_SaySSGtF",
-            "mangledName": "$s8REIOSSDKAAC7onMatch11dynamicList15matchedGroupIdsyAA07DynamicE0V_SaySSGtF",
+            "usr": "s:8REIOSSDK12REiosHandlerC7onMatch11dynamicList15matchedGroupIdsyAA07DynamicG0V_SaySSGtF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC7onMatch11dynamicList15matchedGroupIdsyAA07DynamicG0V_SaySSGtF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -17623,8 +17623,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:8REIOSSDKAAC19handleStudioPairing3urlSb10Foundation3URLV_tF",
-            "mangledName": "$s8REIOSSDKAAC19handleStudioPairing3urlSb10Foundation3URLV_tF",
+            "usr": "s:8REIOSSDK12REiosHandlerC19handleStudioPairing3urlSb10Foundation3URLV_tF",
+            "mangledName": "$s8REIOSSDK12REiosHandlerC19handleStudioPairing3urlSb10Foundation3URLV_tF",
             "moduleName": "REIOSSDK",
             "declAttributes": [
               "Final",
@@ -17638,8 +17638,8 @@
           }
         ],
         "declKind": "Class",
-        "usr": "s:8REIOSSDKAAC",
-        "mangledName": "$s8REIOSSDKAAC",
+        "usr": "s:8REIOSSDK12REiosHandlerC",
+        "mangledName": "$s8REIOSSDK12REiosHandlerC",
         "moduleName": "REIOSSDK",
         "declAttributes": [
           "Final",
@@ -17699,14 +17699,14 @@
         "children": [
           {
             "kind": "TypeNominal",
-            "name": "REIOSSDK",
-            "printedName": "REIOSSDK.REIOSSDK",
-            "usr": "s:8REIOSSDKAAC"
+            "name": "REiosHandler",
+            "printedName": "REIOSSDK.REiosHandler",
+            "usr": "s:8REIOSSDK12REiosHandlerC"
           }
         ],
         "declKind": "Var",
-        "usr": "s:8REIOSSDK6sharedA2ACvp",
-        "mangledName": "$s8REIOSSDK6sharedA2ACvp",
+        "usr": "s:8REIOSSDK6sharedAA12REiosHandlerCvp",
+        "mangledName": "$s8REIOSSDK6sharedAA12REiosHandlerCvp",
         "moduleName": "REIOSSDK",
         "declAttributes": [
           "AccessControl",
@@ -17720,14 +17720,14 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "REIOSSDK",
-                "printedName": "REIOSSDK.REIOSSDK",
-                "usr": "s:8REIOSSDKAAC"
+                "name": "REiosHandler",
+                "printedName": "REIOSSDK.REiosHandler",
+                "usr": "s:8REIOSSDK12REiosHandlerC"
               }
             ],
             "declKind": "Accessor",
-            "usr": "s:8REIOSSDK6sharedA2ACvg",
-            "mangledName": "$s8REIOSSDK6sharedA2ACvg",
+            "usr": "s:8REIOSSDK6sharedAA12REiosHandlerCvg",
+            "mangledName": "$s8REIOSSDK6sharedAA12REiosHandlerCvg",
             "moduleName": "REIOSSDK",
             "accessorKind": "get"
           }
@@ -42080,21 +42080,21 @@
     {
       "filePath": "\/Users\/logeshwarm\/Documents\/Logeshwar\/2.iOS\/1. iOS Apps\/1.iOSSDK\/Revamp\/TechiOSSDK\/SDK\/Sources\/REIOSSDK\/REIOSSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 1981,
+      "offset": 1989,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/logeshwarm\/Documents\/Logeshwar\/2.iOS\/1. iOS Apps\/1.iOSSDK\/Revamp\/TechiOSSDK\/SDK\/Sources\/REIOSSDK\/REIOSSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 2415,
+      "offset": 2423,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/logeshwarm\/Documents\/Logeshwar\/2.iOS\/1. iOS Apps\/1.iOSSDK\/Revamp\/TechiOSSDK\/SDK\/Sources\/REIOSSDK\/REIOSSDK.swift",
       "kind": "BooleanLiteral",
-      "offset": 2463,
+      "offset": 2471,
       "length": 5,
       "value": "false"
     },

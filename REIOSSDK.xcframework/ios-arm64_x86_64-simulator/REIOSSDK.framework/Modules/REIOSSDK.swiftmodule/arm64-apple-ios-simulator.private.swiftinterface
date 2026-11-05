@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.2.4 (swiftlang-6.2.4.1.4 clang-1700.6.4.2)
-// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name REIOSSDK -package-name sdk
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.4
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature StrictConcurrency -enable-experimental-feature DebugDescriptionMacro -module-name REIOSSDK -package-name sdk
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.4
 import CommonCrypto
 import CoreLocation
 import CoreTelephony
@@ -452,8 +452,8 @@ extension REIOSSDK.RSInboxViewController : UIKit.UISearchBarDelegate {
   @_Concurrency.MainActor @preconcurrency @objc final public func searchBar(_ searchBar: UIKit.UISearchBar, textDidChange searchText: Swift.String)
   @_Concurrency.MainActor @preconcurrency @objc final public func searchBarCancelButtonClicked(_ searchBar: UIKit.UISearchBar)
 }
-@_hasMissingDesignatedInitializers final public class REIOSSDK : REIOSSDK.REIOSSDKProtocol, @unchecked Swift.Sendable {
-  public static let shared: REIOSSDK.REIOSSDK
+@_hasMissingDesignatedInitializers final public class REiosHandler : REIOSSDK.REIOSSDKProtocol, @unchecked Swift.Sendable {
+  public static let shared: REIOSSDK.REiosHandler
   final public func initSDK(appId: Swift.String, debug: Swift.Bool = false, enableAutoScreenTracking: Swift.Bool = false)
   final public func registerUser(params: [Swift.String : Any]) async
   final public func logout() async
@@ -509,14 +509,14 @@ extension REIOSSDK.RSInboxViewController : UIKit.UISearchBarDelegate {
   @_Concurrency.MainActor final public func startDeepLinkSocket(url: Swift.String, apiKey: Swift.String)
   @objc deinit
 }
-extension REIOSSDK.REIOSSDK : REIOSSDK.MatchListener {
+extension REIOSSDK.REiosHandler : REIOSSDK.MatchListener {
   final public func onMatch(dynamicList: REIOSSDK.DynamicList, matchedGroupIds: [Swift.String])
   @discardableResult
   @_Concurrency.MainActor final public func handleStudioPairing(url: Foundation.URL) -> Swift.Bool
 }
-public typealias AnalyticsSDK = REIOSSDK.REIOSSDK
+public typealias AnalyticsSDK = REIOSSDK.REiosHandler
 public typealias AnalyticsSDKProtocol = REIOSSDK.REIOSSDKProtocol
-public var shared: REIOSSDK.REIOSSDK {
+public var shared: REIOSSDK.REiosHandler {
   get
 }
 @_hasMissingDesignatedInitializers final public class BlastManager : Swift.Sendable {
