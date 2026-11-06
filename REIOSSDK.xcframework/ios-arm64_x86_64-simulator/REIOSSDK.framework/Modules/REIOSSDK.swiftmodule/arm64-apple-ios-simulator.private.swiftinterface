@@ -36,7 +36,7 @@ public struct SDKConfiguration : Swift.Sendable {
   public let environment: REIOSSDK.SDKEnvironment
   public let isEncryptionEnabled: Swift.Bool
   public let enableAutoScreenTracking: Swift.Bool
-  public init(appId: Swift.String, debug: Swift.Bool = false, isPrint: Swift.Bool = false, environment: REIOSSDK.SDKEnvironment = .team, isEncryptionEnabled: Swift.Bool = false, enableAutoScreenTracking: Swift.Bool = false)
+  public init(appId: Swift.String, debug: Swift.Bool = false, isPrint: Swift.Bool = false, environment: REIOSSDK.SDKEnvironment = .run, isEncryptionEnabled: Swift.Bool = false, enableAutoScreenTracking: Swift.Bool = false)
 }
 public struct DeepLinkResult : @unchecked Swift.Sendable {
   public let screenName: Swift.String
@@ -433,6 +433,10 @@ public protocol REIOSSDKProtocol : AnyObject {
   @discardableResult
   @_Concurrency.MainActor func handleStudioPairing(url: Foundation.URL) -> Swift.Bool
 }
+public typealias ResulSDKProtocol = REIOSSDK.REIOSSDKProtocol
+extension REIOSSDK.REIOSSDKProtocol {
+  public func initialize(appId: Swift.String, debug: Swift.Bool = false, enableAutoScreenTracking: Swift.Bool = false)
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency final public class RSInboxViewController : UIKit.UIViewController {
   @_Concurrency.MainActor @preconcurrency @objc override final public func viewDidLoad()
   #if compiler(>=5.3) && $NonescapableTypes
@@ -452,8 +456,8 @@ extension REIOSSDK.RSInboxViewController : UIKit.UISearchBarDelegate {
   @_Concurrency.MainActor @preconcurrency @objc final public func searchBar(_ searchBar: UIKit.UISearchBar, textDidChange searchText: Swift.String)
   @_Concurrency.MainActor @preconcurrency @objc final public func searchBarCancelButtonClicked(_ searchBar: UIKit.UISearchBar)
 }
-@_hasMissingDesignatedInitializers final public class REiosHandler : REIOSSDK.REIOSSDKProtocol, @unchecked Swift.Sendable {
-  public static let shared: REIOSSDK.REiosHandler
+@_hasMissingDesignatedInitializers final public class ResulSDK : REIOSSDK.REIOSSDKProtocol, @unchecked Swift.Sendable {
+  public static let shared: REIOSSDK.ResulSDK
   final public func initSDK(appId: Swift.String, debug: Swift.Bool = false, enableAutoScreenTracking: Swift.Bool = false)
   final public func registerUser(params: [Swift.String : Any]) async
   final public func logout() async
@@ -509,14 +513,15 @@ extension REIOSSDK.RSInboxViewController : UIKit.UISearchBarDelegate {
   @_Concurrency.MainActor final public func startDeepLinkSocket(url: Swift.String, apiKey: Swift.String)
   @objc deinit
 }
-extension REIOSSDK.REiosHandler : REIOSSDK.MatchListener {
+extension REIOSSDK.ResulSDK : REIOSSDK.MatchListener {
   final public func onMatch(dynamicList: REIOSSDK.DynamicList, matchedGroupIds: [Swift.String])
   @discardableResult
   @_Concurrency.MainActor final public func handleStudioPairing(url: Foundation.URL) -> Swift.Bool
 }
-public typealias AnalyticsSDK = REIOSSDK.REiosHandler
+public typealias REiosHandler = REIOSSDK.ResulSDK
+public typealias AnalyticsSDK = REIOSSDK.ResulSDK
 public typealias AnalyticsSDKProtocol = REIOSSDK.REIOSSDKProtocol
-public var shared: REIOSSDK.REiosHandler {
+public var shared: REIOSSDK.ResulSDK {
   get
 }
 @_hasMissingDesignatedInitializers final public class BlastManager : Swift.Sendable {
